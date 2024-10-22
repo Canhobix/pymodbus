@@ -1,0 +1,11 @@
+[Unit]
+Description=Pymodbus
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/home/ze/pymodbus/plc-server.py
+
+[Install]
+WantedBy=multi-user.target
