@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Pymodbus Server Payload Example
 --------------------------------------------------------------------------
@@ -84,7 +84,7 @@ def run_payload_server():
     # ----------------------------------------------------------------------- #
     # run the server you want
     # ----------------------------------------------------------------------- #
-    StartTcpServer(context=context, identity=identity, address=("10.4.4.6", 502))
+    StartTcpServer(context=context, identity=identity, address=("10.0.10.3", 502))
     
 
 if __name__ == "__main__":
