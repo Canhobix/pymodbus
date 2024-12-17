@@ -3,7 +3,7 @@ from pymodbus.server.sync import StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock, ModbusSlaveContext, ModbusServerContext
 from pymodbus.payload import BinaryPayloadBuilder, Endian
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 
 import logging
 
