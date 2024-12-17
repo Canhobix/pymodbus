@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from pymodbus.server import StartTcpServer  # Updated import
+from pymodbus.server import StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock, ModbusSlaveContext, ModbusServerContext
 from pymodbus.payload import BinaryPayloadBuilder, Endian
@@ -23,10 +23,10 @@ def run_payload_server():
     )
     context = ModbusServerContext(slaves=store, single=True)
 
-    # Correct usage of BinaryPayloadBuilder
+    # Use BinaryPayloadBuilder to construct payload
     builder = BinaryPayloadBuilder(byteorder=Endian.LITTLE, wordorder=Endian.BIG)
-    builder.add_32bit_uint(12345)  # Example: Add a 32-bit unsigned integer to the payload
-    payload = builder.to_registers()
+    builder.add_32bit_uint(12345)  # Adding a 32-bit unsigned integer as an example
+    payload = builder.to_registers()  # Convert to Modbus registers
     log.info(f"Generated payload: {payload}")
 
     # Configure the server identity
