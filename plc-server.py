@@ -38,8 +38,8 @@ def run_payload_server():
     # ----------------------------------------------------------------------- #
     # build your payload
     # ----------------------------------------------------------------------- #
-    builder = BinaryPayloadBuilder(byteorder=Endian.Little,
-                                   wordorder=Endian.Little)
+    builder = BinaryPayloadBuilder(byteorder=Endian.LITTLE,
+                                   wordorder=Endian.LITTLE)
     builder.add_string('abcdefgh')
     builder.add_bits([0, 1, 0, 1, 1, 0, 1, 0])
     builder.add_8bit_int(-0x12)
