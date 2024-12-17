@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-from pymodbus.server import StartTcpServer
+from pymodbus.server import StartTcpServer  # Updated import
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock, ModbusSlaveContext, ModbusServerContext
-from pymodbus.payload import BinaryPayloadBuilder, Endian
-from pymodbus.client import ModbusTcpClient
+from pymodbus.payload import Endian
+from pymodbus.client.sync import ModbusTcpClient
 
 import logging
 
@@ -25,10 +25,8 @@ def run_payload_server():
     )
     context = ModbusServerContext(slaves=store, single=True)
 
-    # Replace BinaryPayloadBuilder with modern client methods
+    # Example of payload creation
     client = ModbusTcpClient('127.0.0.1')
-    
-    # Example payload creation
     payload = client.convert_to_registers(12345, byteorder=Endian.LITTLE, wordorder=Endian.BIG)
     log.info(f"Generated payload: {payload}")
 
