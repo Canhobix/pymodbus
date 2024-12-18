@@ -5,6 +5,7 @@ Install python3-pip (sudo apt install python3-pip)
 Install pymodbus (sudo pip3 install pymodbus)
 
 ======================================================================
+chmod +x /home/fortinet/pymodbus/plc-server.py
 sudo cp /home/fortinet/pymodbus.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable pymodbus.service
