@@ -20,7 +20,38 @@ sudo journalctl -u pymodbus.service -f
 ======================================================================
 
 modbus-cli install
-[sudo pip3 install umodbus colorama](https://github.com/tallakt/modbus-cli)
+sudo pip3 install umodbus colorama        (https://github.com/tallakt/modbus-cli)
+
+====================================================================== 
+
+modbus Write Commands installer environment
+
+Step-by-Step to Recreate the Environment
+
+    Install the required venv package (if not already):
+
+sudo apt install python3.13-venv
+
+    Create the virtual environment again:
+
+python3 -m venv ~/modbus-env
+
+    Activate it:
+
+source ~/modbus-env/bin/activate
+
+You’ll know it's activated if your prompt shows:
+(modbus-env)─(kali㉿kali-attack)
+
+    Install pymodbus:
+
+pip install pymodbus
+
+    Run your script (inside the venv):
+
+python3 modbus-write.py
+
+
 
 
 
