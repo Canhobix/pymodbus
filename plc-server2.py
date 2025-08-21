@@ -42,7 +42,7 @@ def run_payload_server():
 
     # Start the TCP server
     log.info("Starting Modbus TCP server...")
-    StartTcpServer(context, identity=identity, address=("10.4.4.2", 502))
+    StartTcpServer(context=context, identity=identity, address=("10.4.4.2", 502))
 
 
 if __name__ == "__main__":
